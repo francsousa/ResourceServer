@@ -14,6 +14,8 @@ public class WebSecurity {
     SecurityFilterChain configure(HttpSecurity http) throws Exception {
 
         // Configure Http Security
+        http.authorizeRequests(authz -> authz.anyRequest().authenticated())
+                .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> {}));
 
         return http.build();
     }

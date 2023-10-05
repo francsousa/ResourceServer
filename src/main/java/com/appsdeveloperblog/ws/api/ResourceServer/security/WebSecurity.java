@@ -17,7 +17,8 @@ public class WebSecurity {
         // Configure Http Security
         http.authorizeHttpRequests(authz ->
                         authz
-                                .requestMatchers(HttpMethod.GET, "/users").hasAnyAuthority("SCOPE_profile")
+                                .requestMatchers(HttpMethod.GET, "/users/status/check")
+                                .hasAnyAuthority("SCOPE_profile")
                                 .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> {
                 }));

@@ -22,6 +22,7 @@ public class WebSecurity {
                                 .requestMatchers(HttpMethod.GET, "/users/status/check")
 //                                .hasAnyAuthority("SCOPE_profile")
                                 .hasRole("developer")
+//                                .hasAuthority("ROLE_developer")
 //                                .hasAnyRole("developer", "user")
                                 .anyRequest().authenticated())
                 .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt -> jwt.jwtAuthenticationConverter(jwtAuthenticationConverter)));

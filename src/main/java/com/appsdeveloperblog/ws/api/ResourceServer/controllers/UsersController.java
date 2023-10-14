@@ -26,7 +26,7 @@ public class UsersController {
     @PostAuthorize("returnObject.userId == #jwt.subject")
     @GetMapping(path = "/{id}")
     public UserRest getUser(@PathVariable String id, @AuthenticationPrincipal Jwt jwt) {
-        return new UserRest("Francisco", "Sousa", "");
+        return new UserRest("Francisco", "Sousa", "84916032-a3c4-4823-8fa2-6e5dfffb9ae1");
     }
 
 }
